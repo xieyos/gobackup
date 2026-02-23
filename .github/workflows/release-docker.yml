@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.REGISTRY_GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository }}/gobackup:${{ steps.vars.outputs.short_sha }} .
+        run: docker build -t ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.short_sha }} .
 
       - name: Push Docker image1
-        run: docker push ghcr.io/${{ github.repository }}/gobackup:${{ steps.vars.outputs.short_sha }}
+        run: docker push ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.short_sha }}
